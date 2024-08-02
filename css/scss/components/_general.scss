@@ -1,0 +1,257 @@
+$font-main: 'Bebas Neue', 'Arial';
+$font-second: 'Gilroy', 'Arial';
+
+html {
+    font-size: calc(100vw / 1920 * 10);
+
+    @include media-breakpoint-down(lg) {
+        font-size: calc(100vw / 767 * 10);
+    }
+
+    @include media-breakpoint-down(md) {
+        font-size: calc(100vw / 575 * 10);
+    }
+
+    @include media-breakpoint-down(sm) {
+        font-size: calc(100vw / 375 * 10);
+    }
+
+    * {
+        font-family: $font-second;
+        font-weight: 400;
+        font-size: 1.4rem;
+        line-height: normal;
+        color: $black;
+    }
+}
+
+body {
+    background-color: #EFF4F6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-main;
+    font-weight: 700;
+    font-size: 3.5rem;
+    line-height: normal;
+    color: $black;
+    margin: 0;
+
+    span {
+        font-family: $font-main;
+        font-weight: 700;
+        font-size: 3.5rem;
+        line-height: normal;
+        color: $danger;
+    }
+}
+
+a {
+    text-decoration: none;
+    line-height: normal;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+form {
+    gap: 1rem 0;
+
+    h1, h2 {
+        font-size: 10rem;
+        line-height: 8rem;
+        color: $warning;
+    }
+
+    input[type=checkbox] {
+        &:checked {
+            &+label::after {
+                opacity: 1;
+            }
+        }
+
+        &+label {
+            position: relative;
+            padding-left: 5.7rem;
+            margin-top: 0.6rem;
+
+            &, &>a {
+                font-weight: 500;
+                color: #506270;
+            }
+
+            &>a {
+                text-decoration: underline;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 2rem;
+                height: 2rem;
+                background: url(../images/svg/checkbox.svg) no-repeat;
+                background-size: contain;
+                z-index: 1;
+                top: -0.2rem;
+                left: 2.7rem;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                width: 1.45rem;
+                height: 1.05rem;
+                background: url(../images/svg/checkbox-mark.svg) no-repeat;
+                background-size: contain;
+                z-index: 1;
+                top: -0.1rem;
+                left: 3.3rem;
+                opacity: 0;
+            }
+        }
+    }
+}
+
+input {
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 4.8rem;
+    color: #A2B8CB;
+    width: 100%;
+    background-color: rgba($color: $black, $alpha: 0.5);
+    border: 1px #667989 solid;
+    border-radius: 3.05rem;
+    padding: 0 2.7rem !important;
+
+    &::placeholder {
+        color: #A2B8CB;
+    }
+
+    &[type=checkbox] {
+        display: none;
+
+        &+label {
+            cursor: pointer;
+        }
+    }
+}
+
+.section {
+    &-box {
+        max-width: 145rem;
+        width: 100%;
+        margin: 0 auto;
+
+        @include media-breakpoint-down(lg) {
+            max-width: 100%;
+            padding: 0 1.6rem;
+        }
+    }
+
+    &-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        margin-bottom: 4.3rem;
+    }
+}
+
+.detail-link {
+    position: relative;
+    width: 4.4rem;
+    height: 4.4rem;
+
+    &::before, &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-size: contain;
+        transition: all .1s linear;
+    }
+
+    &::before {
+        background: url(../images/svg/detail-arrow.svg) no-repeat;
+        background-size: contain;
+        opacity: 1;
+    }
+
+    &::after {
+        background: url(../images/svg/detail-arrow-active.svg) no-repeat;
+        background-size: contain;
+        opacity: 0;
+    }
+}
+
+.pagination {
+    &-container {
+        position: relative;
+        display: flex;
+        gap: 39rem;
+        z-index: 1;
+
+        .swiper-pagination.pagination {
+            width: 37rem;
+            height: 0.4rem;
+            border-radius: 1rem;
+            left: auto;
+            top: auto;
+            bottom: 1rem;
+        
+            span {
+                border-radius: 1rem;
+                background: $warning;
+            }
+        }
+    }
+
+    &__current, &__all {
+        font-size: 2rem;
+        font-weight: 400;
+        line-height: normal;
+        color: $white;
+    }
+}
+
+.slider-arrows {
+    position: absolute;
+    top: 25rem;
+    left: 0;
+
+    .swiper {
+        &-button {
+            &-next, &-prev {
+                width: 5.7rem;
+                height: 5.7rem;
+                background: url(../images/svg/instructors-slider-arrow.svg) no-repeat;
+                background-size: contain;
+
+                &::after {
+                    content: '';
+                }
+            }
+
+            &-prev {
+                left: -7.8rem;
+                rotate: 180deg;
+            }
+
+            &-next {
+                right: -7.8rem;
+            }
+        }
+    }
+}
+
+.luxar-link {
+    width: 10rem;
+    height: 7rem;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}

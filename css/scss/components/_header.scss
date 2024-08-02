@@ -1,0 +1,160 @@
+.header {
+    position: fixed;
+    height: 12rem;
+    background: rgba($color: $black, $alpha: 0.7);
+    backdrop-filter: blur(5px);
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+    @include media-breakpoint-down(lg) {
+        height: 6rem;
+    }
+
+    &__burger-btn {
+        display: none;
+        
+        @include media-breakpoint-down(lg) {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 4.2rem;
+            height: 1.5rem;
+            transform: translateY(-50%);
+            cursor: pointer;
+            background: none;
+            padding: 0;
+            border: none;
+            top: 50%;
+            left: 1.6rem;
+
+            span {
+                width: 100%;
+                height: 1px;
+                background-color: #DBE4ED;
+
+                &:last-child {
+                    width: calc(100% - 1.1rem);
+                }
+            }
+        }
+    }
+
+    .section-box {
+        display: flex;
+        height: 100%;
+
+        @include media-breakpoint-down(lg) {
+            justify-content: center;
+        }
+    }
+
+    &__logo {
+        display: inline-block;
+        max-width: 11rem;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+
+        @include media-breakpoint-down(lg) {
+            width: 4.6rem;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        margin-left: 1.4rem;
+
+        @include media-breakpoint-down(lg) {
+            justify-content: center;
+            width: max-content;
+            margin-left: 0.6rem;
+        }
+    }
+
+    &__top {
+        display: flex;
+
+        .title-main {
+            max-width: 15.8rem;
+            margin-top: 2.3rem;
+
+            @include media-breakpoint-down(lg) {
+                max-width: 13.3rem;
+                margin-top: 0.5rem;
+            }
+        }
+
+        .menu-secondary {
+            margin-left: 5rem;
+
+            @include media-breakpoint-down(lg) {
+                display: none;
+            }
+        }
+
+        .phone {
+            margin-left: auto;
+            margin-top: 1.5rem;
+            
+            @include media-breakpoint-down(lg) {
+                position: absolute;
+                margin-top: 0;
+                transform: translateY(-50%);
+                top: 50%;
+                right: 1.6rem;
+
+                &__tel {
+                    justify-content: center;
+                    width: 4rem;
+                    height: 4rem;
+                    background-color: rgba($color: $black, $alpha: 0.3);
+                    border-radius: 50%;
+                    
+                    svg {
+                        width: 2.2rem;
+                        height: 2.2rem;
+                    }
+
+                    span {
+                        display: none;
+                    }    
+                }
+
+                &__order {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &__bottom {
+        display: flex;
+
+        @include media-breakpoint-down(lg) {
+            display: none;
+        }
+
+        .menu {
+            display: flex;
+            align-items: end;
+            margin-left: 1rem;
+        }
+
+        .socials {
+            margin-left: auto;
+            margin-bottom: 1.4rem;
+        }
+    }
+}

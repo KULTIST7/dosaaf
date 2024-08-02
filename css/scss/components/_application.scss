@@ -1,0 +1,28 @@
+.application {
+    position: relative;
+    height: 42.6rem;
+    background: url(../images/application-bg.jpg) no-repeat;
+    background-size: cover;
+    padding-top: 5rem;
+    margin-bottom: 15rem;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 44.4rem;
+        height: 37.2rem;
+        background: url(../images/svg/pattern-2.svg) no-repeat;
+        background-size: cover;
+        top: 2.7rem;
+        left: 9.3rem;
+    }
+
+    .section-box {
+        display: flex;
+        justify-content: end;
+    }
+
+    form {
+        width: 56.7rem;
+    }
+}

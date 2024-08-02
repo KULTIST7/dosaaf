@@ -1,0 +1,25 @@
+.address {
+    display: flex;
+    gap: 4rem;
+
+    &__item {
+        position: relative;
+        font-weight: 500;
+        font-size: 1.8rem;
+        line-height: 1.8rem;
+        color: $black;
+        padding-left: 2.8rem;
+        margin-bottom: 0;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 1.6rem;
+            height: 1.9rem;
+            background: url(../images/svg/address-mark.svg) no-repeat;
+            background-size: contain;
+            top: 0;
+            left: 0;
+        }
+    }
+}

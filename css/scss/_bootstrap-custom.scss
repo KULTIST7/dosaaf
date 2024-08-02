@@ -1,0 +1,72 @@
+@import "../../bootstrap/scss/bootstrap";
+
+$primary: #56A2E9;
+$secondary: #899198;
+$warning: #FFCC00;
+$danger: #FF0C0C;
+$info: #6BAFEE;
+
+$spacer: 1rem;
+
+.container, .container-fluid, .container-xxl, .container-xl, .container-lg, .container-md, .container-sm,
+.row > * {
+    padding: 0;
+    margin: 0;
+}
+
+.btn {
+    --bs-btn-font-size: 1.6rem;
+
+    &-primary {
+        position: relative;
+        max-width: var(--bs-btn-width);
+        padding: var(--bs-btn-padding-y) calc(var(--bs-btn-padding-x) + 1.7rem) var(--bs-btn-padding-y) var(--bs-btn-padding-x);
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 1.2rem;
+            height: 1.2rem;
+            background: url(../images/svg/white-arrow.svg) no-repeat;
+            background-size: contain;
+            transform: translateY(-50%);
+            top: 50%;
+            right: 2.4rem;
+        }
+
+        --bs-btn-color: #{$warning};
+        --bs-btn-hover-color: #{shade-color($warning, 20%)};
+        --bs-btn-active-color: #{shade-color($warning, 20%)};
+        --bs-btn-bg: #000000E5;
+        --bs-btn-hover-bg: #000000E5;
+        --bs-btn-active-bg: #000000E5;
+        --bs-btn-border-radius: 2.95rem;
+        --bs-btn-line-height: 5rem;
+        --bs-btn-width: 19.2rem;
+        --bs-btn-font-size: 1.8rem;
+        --bs-btn-padding-y: 0;
+        --bs-btn-padding-x: 4rem;
+        --bs-btn-border-width: 0;
+    }
+
+    &-link {
+        text-decoration: none;
+        height: max-content;
+        
+        --bs-btn-color: #{$info};
+        --bs-btn-hover-color: #{shade-color($info, 20%)};
+        --bs-btn-active-color: #{shade-color($info, 20%)};
+        --bs-btn-font-weight: 500;
+        --bs-btn-line-height: 1;
+        --bs-btn-padding-x: 0;
+        --bs-btn-padding-y: 0;
+        --bs-btn-border-width: 0;
+
+        &::after {
+            content: ' >>';
+            margin-top: 0.2rem;
+            margin-left: 1.5rem;
+            display: inline-block;
+        }
+    }
+}

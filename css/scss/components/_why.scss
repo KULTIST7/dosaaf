@@ -1,0 +1,60 @@
+.why {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 13rem;
+    background-color: rgba($color: $white, $alpha: 0.15);
+    padding: 5.3rem 5.3rem 14rem 4.6rem;
+    border: 1px #E6EAF0;
+    border-radius: 2rem;
+    margin-bottom: 9rem;
+
+    &::before {
+        content: '';
+        position: absolute;
+        background: url(../images/svg/pattern.svg) no-repeat;
+        background-size: cover;
+        width: 37.3rem;
+        height: 31.2rem;
+        z-index: -1;
+        top: 5.5rem;
+        left: 3.2rem;
+    }
+
+    h1, h2 {
+        font-size: 4rem;
+        margin-top: 6rem;
+
+        span {
+            font-size: 4rem;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7.5rem 14rem;
+        max-width: 86.2rem;
+    }
+
+    &__item {
+        &>div {
+            display: flex;
+            align-items: end;
+            gap: 2rem;
+            margin-bottom: 2.2rem;
+        }
+
+        h3 {
+            color: $info;
+            font-size: 2.5rem;
+        }
+
+        p {
+            font-weight: 500;
+            font-size: 1.6rem;
+            line-height: 1.5rem;
+            color: $secondary;
+        }
+    }
+}

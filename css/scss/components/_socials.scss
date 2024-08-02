@@ -1,0 +1,26 @@
+.socials {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    height: max-content;
+
+    a {
+        svg {
+            width: 2.4rem;
+            height: auto;
+
+            path {
+                fill: $secondary;
+                transition: all .1s linear;
+            }
+        }
+
+        &:hover {
+            svg {
+                path {
+                    fill: tint-color($secondary, 20%);
+                }
+            }
+        }
+    }
+}

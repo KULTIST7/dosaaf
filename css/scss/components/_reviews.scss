@@ -1,0 +1,90 @@
+.reviews {
+    position: relative;
+    margin-bottom: 7.6rem;
+
+    &-slider {
+        height: 44.8rem;
+
+        .pagination {
+            &-container {
+                justify-content: center;
+                margin-top: -2.2rem;
+
+                .swiper-pagination.pagination {
+                    transform: translateX(-50%);
+                    left: 50%;
+                }
+            }
+
+            &__current, &__all {
+                color: #667989;
+            }
+        }
+
+        .swiper {
+            &-slide {
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+
+    &__card {
+        position: relative;
+        width: 26.4rem;
+        height: 36.1rem;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 14.97%, rgba(255, 255, 255, 0.30) 100%);
+        box-shadow: 0px 0.4rem 6.1rem 0px rgba(0, 0, 0, 0.05);
+        padding: 2.7rem 1.8rem;
+        border-radius: 2rem;
+
+        &:hover {
+            .detail-link {
+                &::before {
+                    opacity: 0;
+                }
+
+                &::after {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &>a {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+
+        h3 {
+            font-weight: 700;
+            font-size: 2rem;
+            line-height: 1.6rem;
+            margin-bottom: 1.2rem;
+        }
+
+        &>span {
+            font-weight: 500;
+            font-size: 1.4rem;
+            line-height: 1.8rem;
+            color: $secondary;
+            display: inline-block;
+            margin-bottom: 1.8rem;
+        }
+
+        p {
+            line-height: 1.8rem;
+            color: #404950;
+        }
+
+        .detail-link {
+            position: absolute;
+            right: 1.1rem;
+            bottom: 0.6rem;
+        }
+    }
+}

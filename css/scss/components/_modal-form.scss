@@ -1,0 +1,48 @@
+.modal-form {
+    position: relative;
+    width: 78.3rem;
+    height: 53.9rem;
+    background: rgba($color: $black, $alpha: 0.70);
+    backdrop-filter: blur(5px);
+    padding: 7.8rem 0 0 8rem;
+    border-radius: 2rem;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 49rem;
+        height: 41rem;
+        background: url(../images/svg/pattern-2.svg) no-repeat;
+        background-size: cover;
+        top: 5.8rem;
+        right: 4.4rem;
+    }
+
+    &>h2, &>h2>span {
+        font-weight: 300;
+        font-size: 8rem;
+        line-height: 8rem;
+        color: $white;
+
+        span {
+            color: $warning;
+        }
+    }
+
+    form {
+        width: 56.7rem;
+
+        h2 {
+            font-size: 9.7rem;
+        }
+    }
+
+    .f-button.is-close-btn {
+        top: 1.8rem;
+        right: 2rem;
+
+        svg {
+            stroke: $white;
+        }
+    }
+}

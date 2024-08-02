@@ -1,0 +1,93 @@
+.main-slider {
+    padding: 0;
+    height: 83rem;
+    margin-bottom: 9rem;
+
+    .swiper {
+        &-slide {
+            position: relative;
+            padding-bottom: 5.3rem;
+
+            .section-box {
+                display: flex;
+                align-items: end;
+                height: 100%;
+            }
+        }
+
+        &-button {
+            &-next, &-prev {
+                background: url(../images/svg/slider-arrow.svg) no-repeat;
+                background-size: contain;
+                width: 7.4rem;
+                height: 7.4rem;
+
+                &::after {
+                    content: none;
+                }
+            }
+
+            &-next {
+                right: 13.5rem;
+            }
+
+            &-prev {
+                rotate: 180deg;
+                left: 13.5rem;
+            }
+        }
+    }
+
+    &__slide {
+        &__bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        &__content {
+            width: 71rem;
+            min-height: 40rem;
+            background: rgba($color: $black, $alpha: 0.2);
+            backdrop-filter: blur(5px);
+            border-radius: 2rem;
+            padding: 4.2rem 2.6rem;
+
+            h1, h2, h1, h2 {
+                font-size: 8rem;
+                line-height: 7rem;
+                color: $white;
+                margin-bottom: 0.8rem;
+
+                span {
+                    font-size: 8rem;
+                    line-height: 7rem;
+                }
+            }
+
+            p {
+                font-size: 1.8rem;
+                line-height: normal;
+                color: $white;
+                margin-bottom: 6.8rem;
+            }
+        }
+    }
+
+    .pagination {
+        &-container {
+            justify-content: end;
+            margin-top: -6rem;
+
+            .swiper-pagination.pagination {
+                left: auto;
+                right: 3.3rem;
+            }
+        }
+    }
+}

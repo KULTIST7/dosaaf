@@ -1,0 +1,53 @@
+.phone {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+
+    &__tel {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+
+        &:hover {
+            span {
+                color: shade-color($white, 20%);
+            }
+
+            svg {
+                path {
+                    fill: shade-color($warning, 20%);
+                }
+            }
+        }
+
+        span {
+            font-family: $font-main;
+            font-size: 3rem;
+            font-weight: 700;
+            color: $white;
+            transition: all .1s linear;
+        }
+
+        svg {
+            width: 1.6rem;
+            height: auto;
+
+            path {
+                fill: $warning;
+                transition: all .1s linear;
+            }
+        }
+    }
+
+    &__order {
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: $primary;
+        transition: all .1s linear;
+        margin-top: -0.8rem;
+
+        &:hover {
+            color: shade-color($primary, 20%);
+        }
+    }
+}
