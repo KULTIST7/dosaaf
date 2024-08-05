@@ -3,10 +3,19 @@
     height: 83rem;
     margin-bottom: 9rem;
 
+    @include media-breakpoint-down(lg) {
+        height: 65.5rem;
+        margin-bottom: 5rem;
+    }
+
     .swiper {
         &-slide {
             position: relative;
             padding-bottom: 5.3rem;
+
+            @include media-breakpoint-down(lg) {
+                padding-bottom: 5.7rem;
+            }
 
             .section-box {
                 display: flex;
@@ -21,6 +30,10 @@
                 background-size: contain;
                 width: 7.4rem;
                 height: 7.4rem;
+
+                @include media-breakpoint-down(lg) {
+                    display: none;
+                }
 
                 &::after {
                     content: none;
@@ -52,21 +65,37 @@
 
         &__content {
             width: 71rem;
-            min-height: 40rem;
             background: rgba($color: $black, $alpha: 0.2);
             backdrop-filter: blur(5px);
             border-radius: 2rem;
             padding: 4.2rem 2.6rem;
 
-            h1, h2, h1, h2 {
+            @include media-breakpoint-down(lg) {
+                padding: 1.6rem;
+            }
+
+            h1, h2 {
                 font-size: 8rem;
                 line-height: 7rem;
                 color: $white;
                 margin-bottom: 0.8rem;
 
+                @include media-breakpoint-down(lg) {
+                    font-size: 4rem;
+                    line-height: 3.5rem;
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 0.6rem;
+                }
+
                 span {
                     font-size: 8rem;
                     line-height: 7rem;
+
+                    @include media-breakpoint-down(lg) {
+                        font-size: 4rem;
+                        line-height: 3.5rem;
+                    }
                 }
             }
 
@@ -75,6 +104,12 @@
                 line-height: normal;
                 color: $white;
                 margin-bottom: 6.8rem;
+
+                @include media-breakpoint-down(lg) {
+                    font-size: 1.4rem;
+                    line-height: 1.6rem;
+                    margin-bottom: 1.6rem;
+                }
             }
         }
     }
@@ -84,9 +119,26 @@
             justify-content: end;
             margin-top: -6rem;
 
+            @include media-breakpoint-down(lg) {
+                gap: 0;
+                justify-content: space-between;
+                margin-top: -3.8rem;
+            }
+
             .swiper-pagination.pagination {
                 left: auto;
                 right: 3.3rem;
+                
+                @include media-breakpoint-down(lg) {
+                    width: calc(91.65% - 5rem);
+                    transform: translateX(-50%);
+                    left: 50%;
+                    right: auto;
+                }
+
+                @include media-breakpoint-down(sm) {
+                    width: 73.33%;
+                }
             }
         }
     }

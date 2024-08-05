@@ -6,6 +6,14 @@
     padding-top: 5rem;
     margin-bottom: 15rem;
 
+    @include media-breakpoint-down(lg) {
+        height: 60.7rem;
+        background-position: 33%;
+        padding-top: 3.2rem;
+        padding-bottom: 4rem;
+        margin-bottom: 3rem;
+    }
+
     &::before {
         content: '';
         position: absolute;
@@ -15,14 +23,56 @@
         background-size: cover;
         top: 2.7rem;
         left: 9.3rem;
+
+        @include media-breakpoint-down(lg) {
+            content: none;
+        }
     }
 
     .section-box {
         display: flex;
         justify-content: end;
+
+        @include media-breakpoint-down(lg) {
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+        }
     }
 
     form {
         width: 56.7rem;
+
+        @include media-breakpoint-down(lg) {
+            width: 100%;
+            padding: 1.6rem;
+            border-radius: 2rem;
+            background: rgba($color: $black, $alpha: 0.20);
+            backdrop-filter: blur(5px);
+        }
+
+        h2 {
+            @include media-breakpoint-down(lg) {
+                font-size: 5.5rem;
+                line-height: normal;
+                position: absolute;
+                text-align: center;
+                top: -25rem;
+                left: 0;
+            }
+
+            @include media-breakpoint-down(md) {
+                top: -22rem;
+            }
+        }
+
+        button {
+            @include media-breakpoint-down(lg) {
+                max-width: none;
+                width: 100%;
+                order: 1;
+                margin-bottom: -4.3rem;
+            }
+        }
     }
 }

@@ -2,6 +2,25 @@
     position: relative;
     margin-bottom: 7.6rem;
 
+    @include media-breakpoint-down(lg) {
+        margin-bottom: 6.8rem;
+    }
+
+    .section-header {
+        @include media-breakpoint-down(lg) {
+            margin-bottom: 3.6rem;
+        }
+    }
+
+    .btn-link {
+        @include media-breakpoint-down(md) {
+            position: absolute;
+            transform: translateX(-50%);
+            left: 50%;
+            bottom: 0;
+        }
+    }
+
     &-slider {
         height: 44.8rem;
 
@@ -10,9 +29,22 @@
                 justify-content: center;
                 margin-top: -2.2rem;
 
+                @include media-breakpoint-down(md) {
+                    margin-top: -6rem;
+                }
+
+                @include media-breakpoint-down(sm) {
+                    justify-content: space-between;
+                    gap: 0;
+                }
+
                 .swiper-pagination.pagination {
                     transform: translateX(-50%);
                     left: 50%;
+
+                    @include media-breakpoint-down(sm) {
+                        width: 73.33%;
+                    }
                 }
             }
 
@@ -29,6 +61,12 @@
         }
     }
 
+    .slider-arrows {
+        @include media-breakpoint-down(lg) {
+            display: none;
+        }
+    }
+
     &__card {
         position: relative;
         width: 26.4rem;
@@ -37,6 +75,11 @@
         box-shadow: 0px 0.4rem 6.1rem 0px rgba(0, 0, 0, 0.05);
         padding: 2.7rem 1.8rem;
         border-radius: 2rem;
+
+        @include media-breakpoint-down(lg) {
+            height: 32.7rem;
+            padding: 2.5rem 1.6rem;
+        }
 
         &:hover {
             .detail-link {

@@ -5,9 +5,17 @@
     gap: 13rem;
     background-color: rgba($color: $white, $alpha: 0.15);
     padding: 5.3rem 5.3rem 14rem 4.6rem;
-    border: 1px #E6EAF0;
+    border: 1px #E6EAF0 solid;
     border-radius: 2rem;
     margin-bottom: 9rem;
+
+    @include media-breakpoint-down(lg) {
+        flex-direction: column;
+        align-items: center;
+        gap: 14.4rem;
+        padding: 2.4rem 2.4rem 9.3rem;
+        margin-bottom: 3rem;
+    }
 
     &::before {
         content: '';
@@ -19,14 +27,31 @@
         z-index: -1;
         top: 5.5rem;
         left: 3.2rem;
+
+        @include media-breakpoint-down(lg) {
+            width: 29.7rem;
+            height: 24.8rem;
+            transform: translateX(-50%);
+            top: 2.2rem;
+            left: 50%;
+        }
     }
 
     h1, h2 {
         font-size: 4rem;
         margin-top: 6rem;
 
+        @include media-breakpoint-down(lg) {
+            font-size: 3rem;
+            margin-top: 8.6rem;
+        }
+    
         span {
             font-size: 4rem;
+
+            @include media-breakpoint-down(lg) {
+                font-size: 3rem;
+            }
         }
     }
 
@@ -35,6 +60,11 @@
         flex-wrap: wrap;
         gap: 7.5rem 14rem;
         max-width: 86.2rem;
+
+        @include media-breakpoint-down(lg) {
+            justify-content: center;
+            gap: 3.5rem;
+        }
     }
 
     &__item {
@@ -43,6 +73,10 @@
             align-items: end;
             gap: 2rem;
             margin-bottom: 2.2rem;
+
+            @include media-breakpoint-down(lg) {
+                margin-bottom: 0.6rem;
+            }
         }
 
         h3 {
@@ -55,6 +89,11 @@
             font-size: 1.6rem;
             line-height: 1.5rem;
             color: $secondary;
+
+            @include media-breakpoint-down(lg) {
+                font-size: 1.4rem;
+                line-height: 1.4rem;
+            }
         }
     }
 }

@@ -4,6 +4,10 @@
     gap: 2rem;
     height: max-content;
 
+    @include media-breakpoint-down(lg) {
+        gap: 1rem;
+    }
+
     a {
         svg {
             width: 2.4rem;

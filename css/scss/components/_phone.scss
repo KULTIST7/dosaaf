@@ -8,6 +8,10 @@
         align-items: center;
         gap: 1.2rem;
 
+        @include media-breakpoint-down(lg) {
+            gap: 1rem;
+        }
+
         &:hover {
             span {
                 color: shade-color($white, 20%);
@@ -26,6 +30,10 @@
             font-weight: 700;
             color: $white;
             transition: all .1s linear;
+
+            @include media-breakpoint-down(lg) {
+                font-size: 2rem;
+            }
         }
 
         svg {
@@ -45,6 +53,11 @@
         color: $primary;
         transition: all .1s linear;
         margin-top: -0.8rem;
+
+        @include media-breakpoint-down(lg) {
+            font-size: 1.4rem;
+            margin-top: -0.3rem;
+        }
 
         &:hover {
             color: shade-color($primary, 20%);

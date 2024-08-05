@@ -2,19 +2,43 @@
     height: 30.5rem;
     background-color: $black;
 
+    @include media-breakpoint-down(lg) {
+        height: 50rem;
+    }
+
     .section-box {
         position: relative;
         display: flex;
         justify-content: space-between;
         height: 100%;
+
+        @include media-breakpoint-down(lg) {
+            justify-content: start;
+            flex-direction: column-reverse;
+        }
     }
 
     .menu {
+        display: flex;
         margin-bottom: 5.5rem;
+
+        @include media-breakpoint-down(lg) {
+            display: none;
+        }
 
         ul {
             li {
-                padding: 2.3rem 1.2rem 1.5rem;
+                padding: 0 1.2rem;
+                
+                a {
+                    padding: 2.3rem 0 1.5rem;
+                }
+            }
+        }
+
+        &__more {
+            &>p {
+                padding: 2.3rem 0 0;
             }
         }
     }
@@ -22,6 +46,11 @@
     &__info {
         display: flex;
         gap: 4rem;
+        
+        @include media-breakpoint-down(lg) {
+            flex-direction: column;
+            gap: 2rem;
+        }
 
         &__content {
             display: flex;
@@ -29,6 +58,13 @@
 
             .title-main {
                 margin-bottom: 0.7rem;
+
+                @include media-breakpoint-down(lg) {
+                    font-size: 2.5rem;
+                    line-height: 2.2rem;
+                    max-width: 22.2rem;
+                    margin: -9rem 0 4.6rem 10.5rem;
+                }
 
                 &::first-line {
                     font-size: 2.5rem;
@@ -43,6 +79,11 @@
             color: $secondary;
             max-width: 82rem;
             margin-bottom: 0.4rem;
+
+            @include media-breakpoint-down(lg) {
+                font-size: 1.4rem;
+                margin-bottom: 1.4rem;
+            }
         }
     }
 
@@ -50,6 +91,12 @@
         width: 15rem;
         height: 15rem;
         margin-top: -0.8rem;
+
+        @include media-breakpoint-down(lg) {
+            width: 9.5rem;
+            height: 9.5rem;
+            margin-top: 0;
+        }
 
         img {
             width: 100%;
@@ -67,6 +114,10 @@
         transition: all .1s linear;
         margin-bottom: 0.4rem;
 
+        @include media-breakpoint-down(lg) {
+            margin-bottom: 0;
+        }
+
         &:hover {
             color: $info;
         }
@@ -79,10 +130,22 @@
         gap: 2rem;
         padding-top: 1.5rem;
 
+        @include media-breakpoint-down(lg) {
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: start;
+            padding-top: 2rem;
+        }
+
         .luxar-link {
             position: absolute;
             right: 0.9rem;
             bottom: 4.3rem;
+
+            @include media-breakpoint-down(lg) {
+                right: 1.6rem;
+                bottom: 6.5rem;
+            }
         }
     }
 }

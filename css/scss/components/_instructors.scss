@@ -2,24 +2,60 @@
     position: relative;
     margin-bottom: 15rem;
 
-    &__header {
-        display: flex;
-        justify-content: space-between;
-        align-items: end;
-        margin-bottom: 4.3rem;
+    @include media-breakpoint-down(lg) {
+        margin-bottom: 9rem;
+    }
+
+    .section-header {
+        @include media-breakpoint-down(lg) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    .btn-link {
+        @include media-breakpoint-down(md) {
+            position: absolute;
+            transform: translateX(-50%);
+            left: 50%;
+            bottom: 0;
+        }
+    }
+
+    h1, h2 {
+        @include media-breakpoint-down(lg) {
+            display: flex;
+            flex-direction: column;
+        }
     }
 
     &-slider {
         height: 44.8rem;
+
+        @include media-breakpoint-down(lg) {
+            height: 42.4rem;
+        }
 
         .pagination {
             &-container {
                 justify-content: center;
                 margin-top: -2.2rem;
 
+                @include media-breakpoint-down(md) {
+                    margin-top: -6rem;
+                }
+
+                @include media-breakpoint-down(sm) {
+                    justify-content: space-between;
+                    gap: 0;
+                }
+
                 .swiper-pagination.pagination {
                     transform: translateX(-50%);
                     left: 50%;
+
+                    @include media-breakpoint-down(sm) {
+                        width: 73.33%;
+                    }
                 }
             }
 
@@ -44,6 +80,10 @@
         background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 14.97%, rgba(255, 255, 255, 0.30) 100%);
         box-shadow: 0px 0.4rem 6.1rem 0px rgba(0, 0, 0, 0.05);
         overflow: hidden;
+
+        @include media-breakpoint-down(lg) {
+            height: 33rem   ;
+        }
 
         &:hover {
             .detail-link {
@@ -70,6 +110,10 @@
             width: 100%;
             height: 17rem;
 
+            @include media-breakpoint-down(lg) {
+                height: 15.3rem;
+            }
+
             img {
                 width: 100%;
                 height: 100%;
@@ -80,6 +124,10 @@
 
         &__content {
             padding: 2rem;
+
+            @include media-breakpoint-down(lg) {
+                padding: 1.9rem 1.6rem;
+            }
 
             h3 {
                 font-weight: 700;
@@ -93,12 +141,20 @@
                 font-weight: 500;
                 color: $secondary;
                 margin-bottom: 0.5rem;
+
+                @include media-breakpoint-down(lg) {
+                    margin-bottom: 0.2rem;
+                }
             }
         }
 
         &__description {
             line-height: 1.4rem;
             margin-bottom: 0.9rem;
+
+            @include media-breakpoint-down(lg) {
+                margin-bottom: 0.5rem;
+            }
         }
 
         &__car {
@@ -109,6 +165,16 @@
             position: absolute;
             right: 1.1rem;
             bottom: 0.6rem;
+
+            @include media-breakpoint-down(lg) {
+                right: 0.8rem;
+            }
+        }
+    }
+
+    .slider-arrows {
+        @include media-breakpoint-down(lg) {
+            display: none;
         }
     }
 }

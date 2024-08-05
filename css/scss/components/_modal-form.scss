@@ -7,6 +7,12 @@
     padding: 7.8rem 0 0 8rem;
     border-radius: 2rem;
 
+    @include media-breakpoint-down(lg) {
+        width: 37.5rem;
+        height: auto;
+        padding: 1.6rem;
+    }
+
     &::before {
         content: '';
         position: absolute;
@@ -16,6 +22,10 @@
         background-size: cover;
         top: 5.8rem;
         right: 4.4rem;
+
+        @include media-breakpoint-down(lg) {
+            content: none;
+        }
     }
 
     &>h2, &>h2>span {
@@ -23,6 +33,12 @@
         font-size: 8rem;
         line-height: 8rem;
         color: $white;
+
+        @include media-breakpoint-down(lg) {
+            font-size: 5rem;
+            line-height: 5rem;
+            margin-bottom: 10rem;
+        }
 
         span {
             color: $warning;
@@ -32,8 +48,27 @@
     form {
         width: 56.7rem;
 
+        @include media-breakpoint-down(lg) {
+            width: 100%;
+            margin: 0;
+        }
+
         h2 {
             font-size: 9.7rem;
+
+            @include media-breakpoint-down(lg) {
+                font-size: 5rem;
+                line-height: 4rem;
+                margin-bottom: 1rem;
+            }
+        }
+
+        button {
+            @include media-breakpoint-down(lg) {
+                max-width: none;
+                width: 100%;
+                order: 1;
+            }
         }
     }
 

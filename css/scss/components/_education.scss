@@ -2,8 +2,16 @@
     padding: 0;
     margin-bottom: 15rem;
 
+    @include media-breakpoint-down(lg) {
+        margin-bottom: 3rem;
+    }
+
     h1, h2 {
         margin-bottom: 5rem;
+
+        @include media-breakpoint-down(lg) {
+            margin-bottom: 1.2rem;
+        }
     }
 
     &__content {
@@ -11,6 +19,10 @@
         flex-wrap: wrap;
         gap: 2.5rem;
         width: 100%;
+
+        @include media-breakpoint-down(lg) {
+            gap: 1rem;
+        }
     }
 
     &__item {
@@ -23,6 +35,32 @@
         border-radius: 2rem;
         padding: 1.5rem;
         overflow: hidden;
+
+        @include media-breakpoint-down(lg) {
+            width: 36.2rem;
+            height: 24rem;
+        }
+
+        @include media-breakpoint-down(md) {
+            width: 26.6rem;
+            height: 17.6rem;
+        }
+        
+        @include media-breakpoint-down(sm) {
+            width: 16.65rem;
+            height: 11rem;
+        }
+
+        &:hover {
+            h3, p, a>span{
+                color: $warning;
+            }
+
+            img {
+                scale: 110%;
+                filter: blur(1px);
+            }
+        }
 
         &::before {
             content: '';
@@ -39,11 +77,22 @@
             font-size: 8rem;
             line-height: 6rem;
             color: $white;
+            transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+            @include media-breakpoint-down(sm) {
+                font-size: 4.8rem;
+                line-height: 4rem;
+            }
         }
 
         p {
             font-weight: 500;
             color: $white;
+            transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+            @include media-breakpoint-down(sm) {
+                display: none;
+            }
         }
 
         a {
@@ -61,6 +110,7 @@
             object-fit: cover;
             object-position: center;
             z-index: -2;
+            transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             top: 0;
             left: 0;
         }
@@ -71,6 +121,7 @@
 
             &::before {
                 background: url(../images/svg/pattern.svg) no-repeat center;
+                background-size: contain;
             }
 
             a {
@@ -86,6 +137,7 @@
                     font-size: 2.5rem;
                     line-height: normal;
                     color: $black;
+                    transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
                 }
             }
         }
