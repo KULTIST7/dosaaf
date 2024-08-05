@@ -12676,6 +12676,7 @@ input[type=checkbox] + label {
   font-size: 8rem;
   line-height: 8rem;
   color: #fff;
+  z-index: 1;
 }
 @media (max-width: 991.98px) {
   .modal-form > h2, .modal-form > .h2, .modal-form > h2 > span, .modal-form > .h2 > span {
@@ -12689,6 +12690,7 @@ input[type=checkbox] + label {
 }
 .modal-form form {
   width: 56.7rem;
+  z-index: 1;
 }
 @media (max-width: 991.98px) {
   .modal-form form {

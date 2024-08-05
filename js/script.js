@@ -148,10 +148,7 @@ function adaptiveFooterNav() {
             + (windowWidth - $('.footer>.section-box').outerWidth())
             + $('.footer__content>.menu').outerWidth()
             + $('.footer__contacts>.socials').outerWidth()
-            // + 25
         ;
-
-        console.log(menuWidth, windowWidth)
 
         if (menuWidth < windowWidth || !$('.footer__content .menu>ul').children().length) {
             return false;
