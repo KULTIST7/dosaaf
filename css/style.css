@@ -12341,6 +12341,13 @@ input[type=checkbox] + label {
      object-position: center;
 }
 
+.waypoint {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  top: -40rem;
+}
+
 .title-main {
   font-family: "Bebas Neue", "Arial";
   font-size: 1.9rem;
@@ -13164,6 +13171,7 @@ input[type=checkbox] + label {
 }
 
 .education {
+  position: relative;
   padding: 0;
   margin-bottom: 15rem;
 }

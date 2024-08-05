@@ -132,6 +132,102 @@ $(document).ready(() => {
         const body = $("html, body");
         body.animate({scrollTop:0}, 500, 'swing');
     });
+
+    $.each($('.education .education__item'), function (i, v){
+        $(this).hide();
+    });
+    var waypointEducation = new Waypoint({
+        element: document.getElementById('education-wp'),
+        handler: function(direction) {
+            let n = 0;
+            $.each($('.education .education__item'), function (i, v){
+                $(this)
+                    .show()
+                    .css('animation-delay', n+ 's')
+                    .addClass('animate__animated animate__backInUp');
+                n+= .1;
+            });
+        },
+
+        offset: 50
+    });
+
+    $.each($('.why .why__item'), function (i, v){
+        $(this).hide();
+    });
+    var waypointWhy = new Waypoint({
+        element: document.getElementById('why-wp'),
+        handler: function(direction) {
+            let n = 0;
+            $.each($('.why .why__item'), function (i, v){
+                $(this)
+                    .show()
+                    .css('animation-delay', n+ 's')
+                    .addClass('animate__animated animate__backInUp');
+                n+= .5;
+            });
+        },
+
+        offset: 50
+    });
+
+    $.each($('.instructors .instructors__card'), function (i, v){
+        $(this).hide();
+    });
+    var waypointInstructors = new Waypoint({
+        element: document.getElementById('instructors-wp'),
+        handler: function(direction) {
+            let n = 0;
+            $.each($('.instructors .instructors__card'), function (i, v){
+                $(this)
+                    .show()
+                    .css('animation-delay', n+ 's')
+                    .addClass('animate__animated animate__backInUp');
+                n+= .3;
+            });
+        },
+
+        offset: 50
+    });
+
+    $.each($('.stats .stats__item'), function (i, v){
+        $(this).hide();
+    });
+    var waypointStats = new Waypoint({
+        element: document.getElementById('stats-wp'),
+        handler: function(direction) {
+            let n = 0;
+            $.each($('.stats .stats__item'), function (i, v){
+                $(this)
+                    .show()
+                    .css('animation-delay', n+ 's')
+                    .addClass('animate__animated animate__backInUp');
+                n+= .5;
+            });
+        },
+
+        offset: 50
+    });
+
+    $.each($('.reviews .reviews__card'), function (i, v){
+        $(this).hide();
+    });
+    var waypointWhy = new Waypoint({
+        element: document.getElementById('reviews-wp'),
+        handler: function(direction) {
+            let n = 0;
+            $.each($('.reviews .reviews__card'), function (i, v){
+                $(this)
+                    .show()
+                    .css('animation-delay', n+ 's')
+                    .addClass('animate__animated animate__backInUp');
+                n+= .3;
+            });
+        },
+
+        offset: 50
+    });
+
 });
 
 function adaptiveHeaderNav() {

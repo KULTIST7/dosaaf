@@ -280,3 +280,10 @@ input {
         object-position: center;
     }
 }
+
+.waypoint {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    top: -40rem;
+}
