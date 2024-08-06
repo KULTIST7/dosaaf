@@ -1,0 +1,36 @@
+.breadcrumb {
+    margin-bottom: 6rem;
+
+    @include media-breakpoint-down(lg) {
+        margin-bottom: 3rem;
+    }
+
+    &, .section-box {
+        &, a, p {
+            font-weight: 400;
+            font-size: 1.6rem;
+            line-height: normal;
+            display: flex;
+
+            @include media-breakpoint-down(lg) {
+                font-size: 1.4rem;
+            }
+        }
+
+        &, a {
+            color: #66717B;
+        }
+
+        a {
+            transition: all .1s linear;
+
+            &:hover {
+                color: tint-color(#66717B, 30%);
+            }
+        }
+
+        p {
+            color: $black;
+        }
+    }
+}

@@ -1,0 +1,155 @@
+.page-404 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 16.6rem;
+
+    @include media-breakpoint-down(lg) {
+        margin-top: 4rem;
+        margin-bottom: 13rem;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 57rem;
+        height: 51rem;
+        background: url(../images/svg/pattern.svg) no-repeat;
+        background-size: contain;
+        opacity: 0.3;
+        transform: translateX(-50%);
+        z-index: -1;
+        left: 50%;
+        top: 5rem;
+
+        @include media-breakpoint-down(lg) {
+            width: 37.5rem;
+            height: 33.5rem;
+            top: 3rem;
+        }
+    }
+
+    h1, h2 {
+        margin-bottom: 4rem;
+
+        @include media-breakpoint-down(lg) {
+            margin-bottom: 2.6rem;
+        }
+
+        &, span {
+            font-size: 4.5rem;
+
+            @include media-breakpoint-down(lg) {
+                font-size: 3rem;
+            }
+        }
+    }
+
+    &>p {
+        font-family: $font-main;
+        font-weight: 700;
+        font-size: 40rem;
+        line-height: 34rem;
+        background-image: url(../images/404-bg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 1.5rem;
+
+        @include media-breakpoint-down(lg) {
+            font-size: 30rem;
+            line-height: 25rem;
+        }
+    }
+
+    &__control {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h3 {
+            font-size: 2.5rem;
+            margin-bottom: 2.5rem;
+
+            @include media-breakpoint-down(lg) {
+                font-size: 2rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        &>div {
+            display: flex;
+            gap: 2rem;
+
+            @include media-breakpoint-down(lg) {
+                gap: 1.6rem;
+            }
+
+            a {
+                font-weight: 500;
+                font-size: 1.6rem;
+                text-align: center;
+                text-transform: uppercase;
+                line-height: 5rem;
+                position: relative;
+                width: 20rem;
+                border-radius: 5rem;
+                background-color: #B4BEC7;
+                transition: all .1s linear;
+
+                @include media-breakpoint-down(lg) {
+                    font-size: 1.4rem;
+                    line-height: 3.7rem;
+                    width: 16.3rem;
+                }
+
+                &:hover {
+                    color: $white;
+                }
+
+                &:first-child, &:last-child {
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        width: 1.2rem;
+                        height: 1.2rem;
+                        background: url(../images/svg/white-arrow.svg) no-repeat;
+                        background-size: contain;
+                        top: 50%;
+
+                        @include media-breakpoint-down(lg) {
+                            width: 0.9rem;
+                            height: 0.9rem;
+                        }
+                    }
+                }
+
+                &:first-child {
+                    &::before {
+                        transform: translateY(50%);
+                        left: 2rem;
+                        rotate: 180deg;
+
+                        @include media-breakpoint-down(lg) {
+                            left: 1.6rem;
+                        }
+                    }
+                }
+
+                &:last-child {
+                    &::before {
+                        transform: translateY(-50%);
+                        right: 2rem;
+
+                        @include media-breakpoint-down(lg) {
+                            right: 1.6rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

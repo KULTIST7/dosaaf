@@ -49,6 +49,68 @@ $spacer: 1rem;
         --bs-btn-border-width: 0;
     }
 
+    &-secondary {
+        position: relative;
+        max-width: var(--bs-btn-width);
+        padding: var(--bs-btn-padding-y) calc(var(--bs-btn-padding-x) + 1.7rem) var(--bs-btn-padding-y) var(--bs-btn-padding-x);
+
+        &:hover {
+            &::before {
+                opacity: 0;
+            }
+
+            &::after {
+                opacity: 1;
+            }
+        }
+
+        &::before, &::after {
+            content: '';
+            position: absolute;
+            width: 1.2rem;
+            height: 1.2rem;
+            transform: translateY(-50%);
+            transition: all 0.15s ease-in-out;
+            top: 50%;
+            right: 2.4rem;
+
+            @include media-breakpoint-down(lg) {
+                right: 2rem;
+            }
+            
+        }
+
+        &::before {
+            background: url(../images/svg/gray-arrow.svg) no-repeat;
+            background-size: contain;
+            opacity: 1;
+        }
+
+        &::after {
+            background: url(../images/svg/white-arrow.svg) no-repeat;
+            background-size: contain;
+            opacity: 0;
+        }
+
+        --bs-btn-color: #{$white};
+        --bs-btn-hover-color: #{$warning};
+        --bs-btn-active-color: #{$warning};
+        --bs-btn-bg: #B4BEC7;
+        --bs-btn-hover-bg: #000000E5;
+        --bs-btn-active-bg: #000000E5;
+        --bs-btn-border-radius: 2.95rem;
+        --bs-btn-line-height: 4rem;
+        --bs-btn-width: 17.5rem;
+        --bs-btn-font-size: 1.6rem;
+        --bs-btn-padding-y: 0;
+        --bs-btn-padding-x: 4rem;
+        --bs-btn-border-width: 0;
+
+        @include media-breakpoint-down(lg) {
+            --bs-btn-width: 16.4rem;
+        }
+    }
+
     &-link {
         text-decoration: none;
         height: max-content;

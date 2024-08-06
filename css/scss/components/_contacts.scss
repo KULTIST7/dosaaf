@@ -1,0 +1,139 @@
+.contacts {
+    margin-bottom: 6rem;
+
+    @include media-breakpoint-down(lg) {
+        margin-bottom: 10.5rem;
+    }
+
+    &__content {
+        gap: 2rem;
+        margin: 0;
+    }
+
+    &__item {
+        display: flex;
+        gap: 9rem;
+        background: rgba($color: $white, $alpha: 0.15);
+        padding: 3.8rem 4.7rem 6.5rem;
+        border: 1px solid #E6EAF0;
+        border-radius: 2rem;
+
+        @include media-breakpoint-down(lg) {
+            flex-direction: column;
+            gap: 4rem;
+            padding: 2.5rem 1.6rem 2rem;
+        }
+
+        &__info {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+
+            @include media-breakpoint-down(lg) {
+                gap: 2rem;
+            }
+
+            .address__item {
+                @include media-breakpoint-down(lg) {
+                    font-size: 1.8rem;
+                }
+            }
+
+            .socials {
+                @include media-breakpoint-down(lg) {
+                    gap: 2rem;
+                }
+            }
+        }
+    }
+
+    &__tels, &__email, .socials {
+        padding-left: 2.8rem;
+    }
+
+    &__tels, &__email {
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 1.6rem;
+            height: 1.6rem;
+            top: 0.3rem;
+            left: 0;
+        }
+
+        p {
+            font-size: 1.6rem;
+
+            &, a {
+                font-weight: 500;
+                line-height: 2.5rem;
+                color: $black;
+            }
+
+            a {
+                font-size: 1.8rem;
+                transition: all .1s linear;
+
+                &:hover {
+                    color: $info;
+                }
+            }
+
+            span {
+                font-weight: 500;
+                font-size: 1.8rem;
+                line-height: 2.2rem;
+                color: #667989;
+            }
+        }
+    }
+
+    &__tels {
+        &::before {
+            background: url(../images/svg/tel-mark.svg) no-repeat;
+            background-size: contain;
+        }
+    }
+
+    &__email {
+        &::before {
+            background: url(../images/svg/email-mark.svg) no-repeat;
+            background-size: contain;
+        }
+    }
+
+    &__map {
+        width: auto;
+        height: 25.8rem;
+        overflow: hidden;
+        border-radius: 2rem;
+
+        @include media-breakpoint-down(lg) {
+            height: 26.4rem;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+    
+    &__main-map {
+        height: 52rem;
+
+        @include media-breakpoint-down(lg) {
+            height: 35rem;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+}

@@ -1,0 +1,12 @@
+.faq {
+    margin-bottom: 25rem;
+
+    @include media-breakpoint-down(lg) {
+        margin-bottom: 11rem;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+    }
+}

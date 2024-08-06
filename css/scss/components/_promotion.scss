@@ -1,0 +1,45 @@
+.promotion {
+    margin-bottom: 15.5rem;
+
+    @include media-breakpoint-down(lg) {
+        margin-bottom: 8rem;
+    }
+
+    .detail-page {
+        &__content {
+            @include media-breakpoint-down(lg) {
+                gap: 3rem;
+                background: none;
+                box-shadow: none;
+            }
+        }
+
+        &__image {
+            img {
+                border-radius: 0;
+            }
+        }
+
+        &__info {
+            h3 {
+                font-size: 3rem;
+                margin-bottom: 3rem;
+
+                @include media-breakpoint-down(lg) {
+                    font-size: 3rem;
+                    line-height: 2.5rem;
+                    width: calc(100% + 2.8rem);
+                    margin-left: -1.4rem;
+                }
+            }
+
+            p {
+                line-height: 1.5rem;
+
+                @include media-breakpoint-down(lg) {
+                    line-height: 1.8rem;
+                }
+            }
+        }
+    }
+}

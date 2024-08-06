@@ -39,6 +39,7 @@ h1, h2, h3, h4, h5, h6 {
 
     @include media-breakpoint-down(lg) {
         font-size: 3rem;
+        line-height: 2rem;
     }
 
     span {
@@ -48,6 +49,18 @@ h1, h2, h3, h4, h5, h6 {
         line-height: normal;
         color: $danger;
         
+        @include media-breakpoint-down(lg) {
+            font-size: 3rem;
+        }
+    }
+
+    b {
+        font-family: $font-main;
+        font-weight: 700;
+        font-size: 3.5rem;
+        line-height: normal;
+        color: #FFCC00;
+
         @include media-breakpoint-down(lg) {
             font-size: 3rem;
         }
@@ -179,6 +192,16 @@ input {
         justify-content: space-between;
         align-items: end;
         margin-bottom: 4.3rem;
+    }
+
+    &-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2.5rem;
+
+        @include media-breakpoint-down(lg) {
+            gap: 1rem;
+        }
     }
 }
 

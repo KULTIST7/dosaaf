@@ -1,0 +1,58 @@
+.customers {
+    margin-bottom: 16.4rem;
+
+    @include media-breakpoint-down(lg) {
+        margin-bottom: 4.7rem;
+    }
+
+    h1, h2 {
+        margin-bottom: 1.6rem;
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+        min-height: 26.7rem;
+        background: rgba($color: $white, $alpha: 0.15);
+        padding: 0 4rem;
+        border: 1px solid #E6EAF0;
+        border-radius: 2rem;
+
+        @include media-breakpoint-down(md) {
+            padding: 3.8rem 1.6rem 5.8rem;
+        }
+
+        &>div {
+            width: 100%;
+            margin: 0;
+
+            @include media-breakpoint-down(lg) {
+                gap: 3rem 0;
+            }
+        }
+    }
+
+    &__item {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+
+            img {
+                max-width: 16rem;
+            }
+
+            p {
+                font-family: $font-main;
+                font-weight: 400;
+                font-size: 1.8rem;
+                color: #B9C0CA;
+                text-align: center;
+
+                @include media-breakpoint-down(md) {
+                    margin-top: 1rem;
+                }
+            }
+    }
+}

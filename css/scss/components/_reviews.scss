@@ -6,9 +6,57 @@
         margin-bottom: 6.8rem;
     }
 
-    .section-header {
-        @include media-breakpoint-down(lg) {
-            margin-bottom: 3.6rem;
+    .section {
+        &-header {
+            @include media-breakpoint-down(lg) {
+                margin-bottom: 3.6rem;
+            }
+        }
+
+        &-list {
+            gap: 2.4rem 3.2rem;
+
+            @include media-breakpoint-down(lg) {
+                gap: 2rem;
+            }
+
+            @include media-breakpoint-down(sm) {
+                gap: 1rem;
+            }
+
+            .reviews__card {
+                @include media-breakpoint-down(lg) {
+                    width: 48.64%;
+                    height: 26.5rem;
+                }
+
+                @include media-breakpoint-down(md) {
+                    width: 48.16%;
+                }
+
+                @include media-breakpoint-down(sm) {
+                    width: 100%;
+                }
+
+                h3 {
+                    @include media-breakpoint-down(lg) {
+                        margin-bottom: 0.9rem;
+                    }
+                }
+
+                &>span {
+                    @include media-breakpoint-down(lg) {
+                        margin-bottom: 1.6rem;
+                    }
+                }
+
+                .detail-link {
+                    @include media-breakpoint-down(lg) {
+                        right: 0.4rem;
+                        bottom: 1rem;
+                    }
+                }
+            }
         }
     }
 

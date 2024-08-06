@@ -1,4 +1,4 @@
-.education {
+.categories {
     position: relative;
     padding: 0;
     margin-bottom: 15rem;
@@ -12,17 +12,6 @@
 
         @include media-breakpoint-down(lg) {
             margin-bottom: 1.2rem;
-        }
-    }
-
-    &__content {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2.5rem;
-        width: 100%;
-
-        @include media-breakpoint-down(lg) {
-            gap: 1rem;
         }
     }
 

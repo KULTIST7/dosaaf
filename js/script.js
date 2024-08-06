@@ -5,6 +5,19 @@ $(document).ready(() => {
     $(window).on('resize', adaptiveHeaderNav);
     $(window).on('resize', adaptiveFooterNav);
 
+    $('.drop-down:not(.active)>.drop-down__body').slideUp(0);
+
+    $('.drop-down__header').on('click', function() {
+        $(this).parent().toggleClass('active');
+
+        if($(this).parent().hasClass('active')) {
+            $($(this).parent().children()[1]).slideDown('fast');
+            
+        } else {
+            $($(this).parent().children()[1]).slideUp('fast');
+        }
+    });
+
     Fancybox.bind("[data-fancybox]");
 
     $('input[type=tel]').inputmask({
@@ -104,10 +117,12 @@ $(document).ready(() => {
 
     $('.header__burger-btn').on('click', () => {
         $('.burger').toggleClass('active');
+        $('body').toggleClass('body-noscroll');
     });
     
     $('.burger__close').on('click', () => {
         $('.burger').removeClass('active');
+        $('body').removeClass('body-noscroll');
     });
 
     $('.menu__more>p').on('mouseenter', function() {
@@ -133,101 +148,110 @@ $(document).ready(() => {
         body.animate({scrollTop:0}, 500, 'swing');
     });
 
-    $.each($('.education .education__item'), function (i, v){
-        $(this).hide();
-    });
-    var waypointEducation = new Waypoint({
-        element: document.getElementById('education-wp'),
-        handler: function(direction) {
-            let n = 0;
-            $.each($('.education .education__item'), function (i, v){
-                $(this)
-                    .show()
-                    .css('animation-delay', n+ 's')
-                    .addClass('animate__animated animate__backInUp');
-                n+= .1;
-            });
-        },
+    if ($('.categories').length && $('#categories-wp').length) {
+        $.each($('.categories .categories__item'), function (i, v){
+            $(this).hide();
+        });
+        var waypointcategories = new Waypoint({
+            element: document.getElementById('categories-wp'),
+            handler: function(direction) {
+                let n = 0;
+                $.each($('.categories .categories__item'), function (i, v){
+                    $(this)
+                        .show()
+                        .css('animation-delay', n+ 's')
+                        .addClass('animate__animated animate__backInUp');
+                    n+= .1;
+                });
+            },
+    
+            offset: 50
+        });
+    }
 
-        offset: 50
-    });
+    if ($('.why').length && $('#why-wp').length) {
+        $.each($('.why .why__item'), function (i, v){
+            $(this).hide();
+        });
+        var waypointWhy = new Waypoint({
+            element: document.getElementById('why-wp'),
+            handler: function(direction) {
+                let n = 0;
+                $.each($('.why .why__item'), function (i, v){
+                    $(this)
+                        .show()
+                        .css('animation-delay', n+ 's')
+                        .addClass('animate__animated animate__backInUp');
+                    n+= .5;
+                });
+            },
+    
+            offset: 50
+        });
+    }
 
-    $.each($('.why .why__item'), function (i, v){
-        $(this).hide();
-    });
-    var waypointWhy = new Waypoint({
-        element: document.getElementById('why-wp'),
-        handler: function(direction) {
-            let n = 0;
-            $.each($('.why .why__item'), function (i, v){
-                $(this)
-                    .show()
-                    .css('animation-delay', n+ 's')
-                    .addClass('animate__animated animate__backInUp');
-                n+= .5;
-            });
-        },
+    if ($('.instructors').length && $('#instructors-wp').length) {
+        $.each($('.instructors .instructors__card'), function (i, v){
+            $(this).hide();
+        });
+        var waypointInstructors = new Waypoint({
+            element: document.getElementById('instructors-wp'),
+            handler: function(direction) {
+                let n = 0;
+                $.each($('.instructors .instructors__card'), function (i, v){
+                    $(this)
+                        .show()
+                        .css('animation-delay', n+ 's')
+                        .addClass('animate__animated animate__backInUp');
+                    n+= .3;
+                });
+            },
+    
+            offset: 50
+        });
+    }
 
-        offset: 50
-    });
+    if ($('.stats').length && $('#stats-wp').length) {
+        $.each($('.stats .stats__item'), function (i, v){
+            $(this).hide();
+        });
+        var waypointStats = new Waypoint({
+            element: document.getElementById('stats-wp'),
+            handler: function(direction) {
+                let n = 0;
+                $.each($('.stats .stats__item'), function (i, v){
+                    $(this)
+                        .show()
+                        .css('animation-delay', n+ 's')
+                        .addClass('animate__animated animate__backInUp');
+                    n+= .5;
+                });
+            },
+    
+            offset: 50
+        });
+    }
 
-    $.each($('.instructors .instructors__card'), function (i, v){
-        $(this).hide();
-    });
-    var waypointInstructors = new Waypoint({
-        element: document.getElementById('instructors-wp'),
-        handler: function(direction) {
-            let n = 0;
-            $.each($('.instructors .instructors__card'), function (i, v){
-                $(this)
-                    .show()
-                    .css('animation-delay', n+ 's')
-                    .addClass('animate__animated animate__backInUp');
-                n+= .3;
-            });
-        },
-
-        offset: 50
-    });
-
-    $.each($('.stats .stats__item'), function (i, v){
-        $(this).hide();
-    });
-    var waypointStats = new Waypoint({
-        element: document.getElementById('stats-wp'),
-        handler: function(direction) {
-            let n = 0;
-            $.each($('.stats .stats__item'), function (i, v){
-                $(this)
-                    .show()
-                    .css('animation-delay', n+ 's')
-                    .addClass('animate__animated animate__backInUp');
-                n+= .5;
-            });
-        },
-
-        offset: 50
-    });
-
-    $.each($('.reviews .reviews__card'), function (i, v){
-        $(this).hide();
-    });
-    var waypointWhy = new Waypoint({
-        element: document.getElementById('reviews-wp'),
-        handler: function(direction) {
-            let n = 0;
-            $.each($('.reviews .reviews__card'), function (i, v){
-                $(this)
-                    .show()
-                    .css('animation-delay', n+ 's')
-                    .addClass('animate__animated animate__backInUp');
-                n+= .3;
-            });
-        },
-
-        offset: 50
-    });
-
+    if($('.reviews').length && $('#reviews-wp').length) {
+        $.each($('.reviews .reviews__card'), function (i, v){
+            $(this).hide();
+        });
+        var waypointWhy = new Waypoint({
+            element: document.getElementById('reviews-wp'),
+            handler: function(direction) {
+                let n = 0;
+                $.each($('.reviews .reviews__card'), function (i, v){
+                    $(this)
+                        .show()
+                        .css('animation-delay', n+ 's')
+                        .addClass('animate__animated animate__backInUp');
+                    n+= .3;
+                });
+            },
+    
+            offset: 50
+        });
+    }
 });
 
 function adaptiveHeaderNav() {

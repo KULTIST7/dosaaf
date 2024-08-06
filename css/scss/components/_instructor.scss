@@ -1,0 +1,59 @@
+.instructor {
+    margin-bottom: 10.8rem;
+
+    @include media-breakpoint-down(lg) {
+        margin-bottom: 6rem;
+    }
+
+    .detail-page {
+        &__info {
+            &>span {
+                font-weight: 500;
+                color: $secondary;
+                margin-bottom: 0.7rem;
+            }
+    
+            p {
+                &, b, span {
+                    font-weight: 400;
+                    font-size: 1.8rem;
+                    line-height: 2.5rem;
+                    color: #404950;
+
+                    @include media-breakpoint-down(lg) {
+                        font-size: 1.4rem;
+                    }
+                }
+    
+                @include media-breakpoint-down(lg) {
+                    line-height: 1.8rem;
+                }
+
+                b {
+                    line-height: 2.8rem;
+                    color: $black;
+
+                    @include media-breakpoint-down(lg) {
+                        line-height: 1.4rem;
+                    }
+                }
+    
+                span {
+                    color: $info;
+
+                    @include media-breakpoint-down(lg) {
+                        line-height: 1.4rem;
+                    }
+                }
+    
+                &:has(> span) {
+                    margin-bottom: 2.5rem;
+
+                    @include media-breakpoint-down(lg) {
+                        margin-bottom: 1.2rem;
+                    }
+                }
+            }
+        }
+    }
+}
